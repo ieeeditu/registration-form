@@ -27,7 +27,7 @@ What things you need to install the software and how to install them:
 
 A step by step series of examples that tell you how to get a development env running
 
-Step 1: Clone to the repo. Visit [GitHub Guides](https://help.github.com/articles/cloning-a-repository/) to know how to clone the repository
+Step 1: Clone the repo. Visit [GitHub Guides](https://help.github.com/articles/cloning-a-repository/) to know how to clone the repository
 
 Step 2: Move a folder to htdocs or www folder of your Server 
 
