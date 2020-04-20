@@ -10,6 +10,7 @@ The form is in used since September 2018.
 * Support discount based on membership
 * Support dynamic fee calculation based on registration count
 
+## Getting Started
 These instructions will get you a copy of the website up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
