@@ -1,6 +1,8 @@
+const host =  window.location.origin;
+const imgPath = host+'/forms/assets/img/';
 // URLs images
-var female_img = "https://ieeeditu.org.in/forms/assets/img/women.gif";
-var male_img = "https://ieeeditu.org.in/forms/assets/img/Life%20Cycle-595b40b75ba036ed117d9ef0.svg";
+var female_img = imgPath+'women.gif';
+var male_img = imgPath+'Life%20Cycle-595b40b75ba036ed117d9ef0.svg';
 
 // On page loaded
 $( document ).ready(function() {    

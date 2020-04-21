@@ -122,7 +122,7 @@
 	include("header.php");
 ?>
 <div class="container" style="margin-top: 1em; ">
-	<?php if($status){ ?>
+	<?php if(!$status){ ?>
 	<div class="row" >
 		<div class="col-sm-12 col-md-12 col-lg-12">
 			<div class="card">
@@ -132,7 +132,7 @@
 			</div>
 		</div>
 	</div>
-	<?php } else ?>
+	<?php } else {?>
 	<div class="row" >
 		<div class="col-sm-8 col-md-8 col-lg-8">
 			<div class="card">
