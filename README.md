@@ -1,9 +1,9 @@
 # Event Registration Form
 
+The official event registration form used by [IEEE Student Branch DIT University](https://ieeeditu.org.in/), 2019.
+The form is in use since September 2018.
+
 It is a free, open-source and easy to deploy event registration portal written in PHP and paired with a MySQL or MariaDB database  with integrated frontend and backend. Can be deployed directly by updating a few configuration files according to the environment.
-
-The project was offically developed for [IEEE Student Branch DIT University](https://ieeeditu.org.in/) in 2018.
-
 
 ## Features
 * Event Registration
@@ -47,6 +47,10 @@ Step 3: Use the db.sql file to create a tables in MySQL server. (Azuming you hav
 
 Step 4: Edit configurtaion files. [More Info!](CONFIGURATION.md)
 
+
+## Authors
+
+* [**Himanshu Kotnala**](https://www.linkedin.com/in/aker99/) - [aker99](https://github.com/aker99)
 
 ### Contribution
 **Development on the project has been discontinued by the [community](https://github.com/ieeeditu).**
