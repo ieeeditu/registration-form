@@ -279,13 +279,13 @@
                                 <div class="form-group col-md-5">
                                     <div class="custom-control custom-radio">
                                         <input type="radio" class="custom-control-input workshop" id="member2" value="2" name="member" required="">
-                                        <label class="custom-control-label" for="member2">IEEE CS Member (Membership Proof Needed)</label>
+                                        <label class="custom-control-label" for="member2">Membership 1 (Membership Proof Needed)</label>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-5">
                                     <div class="custom-control custom-radio">
                                         <input type="radio" class="custom-control-input workshop" id="member1" value="1" name="member" required="">
-                                        <label class="custom-control-label" for="member1">IEEE Member (Membership Proof Needed)</label>
+                                        <label class="custom-control-label" for="member1">Membership 2 (Membership Proof Needed)</label>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-2">
@@ -358,7 +358,7 @@
                                           <input type="radio" class="custom-control-input pay" id="w2-pay-<?php echo $i;?>" value="<?php echo $value['id']?>" name="w2-pay" required <?php if($value['id']==9) echo "checked"; ?>/>
                                           <label class="custom-control-label" for="w2-pay-<?php echo $i;?>"><?php echo $value['fname']." ".$value['lname'];?> (<a href=<?php echo '"tel:'.$value['phn'].'"'?>><?php echo $value['phn']?></a>)</label> 
                                         </div>
-                                        <?php echo COMMON_ASSETS?>                                  <?php 
+                                        <?php 
                                             $i++;}
                                         ?>
                                         <hr>

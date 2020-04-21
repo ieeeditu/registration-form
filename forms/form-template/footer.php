@@ -6,7 +6,7 @@
 			<div class="col-sm-12 col-md-12 col-lg-12">
 				<div class="card">
 					<div class="card-body">
-						<b>For any query, mail us at <a href="mailto:ieee.student.dit@gmail.com">ieee.student.dit@gmail.com</a> or call us at <a href="tel:1111111111">1111111111</a>
+						<b>For any query, mail us at <a href="mailto:<?php echo EMAIL?>"><?php echo EMAIL?></a> or call us at <a href="tel:<?php echo PHN?>"><?php echo PHN?></a>
 						</b>
 					</div>
 				</div>

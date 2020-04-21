@@ -18,8 +18,8 @@
 		<script src="<?php echo COMMON_ASSETS?>/js/block.js"></script>
 		<script src="<?php echo COMMON_ASSETS?>/js/bootstrap.min.js"></script>
 			
-		<link rel="icon" href="IEEE-sign.ico" type="image/x-icon"/>
-		<link rel="shortcut icon" href="IEEE-sign.ico" type="image/x-icon"/>
+		<link rel="icon" href="sign.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="sign.ico" type="image/x-icon"/>
 	</head>
 	<body oncontextmenu="return false" >
 		<nav class="navbar navbar-light bg-light">

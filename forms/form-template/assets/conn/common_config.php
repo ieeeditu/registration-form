@@ -2,7 +2,8 @@
 
 	require_once $_SERVER['DOCUMENT_ROOT'].'/forms/assets/lib/includeall.php';
 	define('FORM_PATH_R','forms/form-template');
-	define('FORM_ASSETS',DOMAIN_NAME.'/'.FORM_PATH_R.'/assets');
+	define('FORM_LINK',DOMAIN_NAME.'/'.FORM_PATH_R);
+	define('FORM_ASSETS',FORM_LINK.'/assets');
 	/**
 	 * Event Tablename in database
 	 */

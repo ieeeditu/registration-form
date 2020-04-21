@@ -7,12 +7,23 @@
 	
 	define('SERVER_HOST',$_SERVER['HTTP_HOST']);
 	define('DOC_ROOT_PATH',$_SERVER['DOCUMENT_ROOT']);
+	
+	/**
+	 * Table name conatining list of volunteers
+	 */
 	define('VOL', 'volunteer');
+	
+
+	/**
+	* Organization Details
+	*/
+	define('PHN','');
+	define('EMAIL','');
 
 	/**
 	 * Checking envirnoment for server or local
 	 */
-	if(SERVER_HOST=='www.ieeeditu.org.in'||SERVER_HOST=='ieeeditu.org.in'||SERVER_HOST=='ieeeditu.azurewebsites.net') {	
+	if(SERVER_HOST=='www.yourdomain.com'||SERVER_HOST=='.yourdomain.com') {	
 		define('DOMAIN_NAME', 'https://'.SERVER_HOST);
 		define('ENV', 'server');
 		define('DEBUG', false);

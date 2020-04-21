@@ -10,13 +10,14 @@
 	 * 2: UNPAID
 	 * undefined: ALL
 	 */
-	$type = $_REQUEST['type'];
+	
 
 	$sql ="SELECT  * FROM ".TABLE;
-	if(!empty($type)) {
+	if(!empty($_REQUEST['type'])) {
+		$type = $_REQUEST['type'];
 
 		if($type==1) {
-			sql.=" where txn is NOT NULL";
+			$sql.=" where txn is NOT NULL";
 		} else if($type==2) {
 			$sql.=" where txn is NULL";
 		}

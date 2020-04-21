@@ -30,6 +30,8 @@
 			 */
 			if ($details->num_rows == 1){
 				$status=true;
+			}else {
+				header('Location: '."/".FORM_PATH_R);
 			}
 		}
 		else if(!empty($_REQUEST['payment_request_id'])) {
@@ -55,7 +57,7 @@
 				}
 			}
 		} else {
-				header("Location: ".$DomainName);
+			header('Location: '."/".FORM_PATH_R);
 		}
 
 		/**
@@ -83,8 +85,6 @@
 								);
 							}
 						}
-						//print_r($details);
-					$msg ='Payment successful for registered email : '.$rows[0]['email'];
 					cnfrmMail($conn,$id);
 					}else false;
 		}
@@ -93,7 +93,7 @@
 					$rows=[];
 					$details = $conn->query($sql);
 
-					if ($details->num_rows > 0){ 
+					if ($details->num_rows > 0) { 
 						while ($row=mysqli_fetch_array($details)) {
 						$rows[] = array( 
 							'email' => $row['email'],
@@ -101,14 +101,13 @@
 							);
 						}
 					}
-				$msg ='Payment Failed for email : '.$rows[0]['email'].'. Plz try again... <a href="'.$DomainName.'/'.VIRTUALHOST.'">'.$DomainName.'/'.VIRTUALHOST.'</a>';
 				$sql = "DELETE FROM ".TABLE." WHERE id='".$id."'";
 				$conn->query($sql);
 			} 
 
 	}
 	else {
-			header("Location: ".$DomainName);
+		header('Location: '."/".FORM_PATH_R);
 	}
 
     /**
@@ -122,12 +121,12 @@
 	include("header.php");
 ?>
 <div class="container" style="margin-top: 1em; ">
-	<?php if(!$status){ ?>
+	<?php if(!$status) { ?>
 	<div class="row" >
 		<div class="col-sm-12 col-md-12 col-lg-12">
 			<div class="card">
 				<div class="card-body">
-					<?php echo $msg;?>
+					Payment failed for email : '<?php echo $rows[0]['email']?>. Plz try again... <a href="<?php FORM_LINK ?>"><?php FORM_LINK ?></a>
 				</div>
 			</div>
 		</div>
@@ -137,7 +136,7 @@
 		<div class="col-sm-8 col-md-8 col-lg-8">
 			<div class="card">
 				<div class="card-body">
-					<?php echo $msg;?>
+					Payment successful for registered email : <?php echo $rows[0]['email']; ?>
 				</div>
 			</div>
 		</div>

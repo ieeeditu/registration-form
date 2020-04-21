@@ -4,13 +4,14 @@
     /**
      * Check for the Request
      */
-    if(!empty($_REQUEST)){
+    if(!empty($_REQUEST['ord'])){
 
         /**
          * Retrieve the unique orderId corresponding to a registration from query parameters.
          */
         $id = $_REQUEST['ord'];
 
+        $msg="";
         /**
          * Query DB to get verification data corresponding to orderId
          */
@@ -39,6 +40,7 @@
              * If request method is POST, than we need to verify otp entered by the user.
              */
             if(!empty($_POST)){
+                echo "inside";
                 /**
                  * Checking otp entered by the user. Once OTP has been verified, txn will store the volunteer id who accepeted the payment. If failed wrong OTP message is displayed to the user.
                  */
@@ -54,17 +56,15 @@
             /**
              * Reducing the value on each try.
              */
-            $count;
-            if($_POST['temp'])
+            if(!empty($_POST['temp']))
                 $count= $_POST['temp']-1;
             else
              $count=3;
             if($count==0)
                 header('Location: '."result.php?ord=".$id);
         }else{ 
-            header('Location: '."/");
+            header('Location: '."/".FORM_PATH_R);
         }
-        $msg="";
 
         /**
          * Getting details of volunteer to displayed on the web page
@@ -74,7 +74,7 @@
         $volPhn=getVolPhn($conn,$volID);
     }  
     else { 
-        header('Location: '."/");
+        header('Location: '."/".FORM_PATH_R);
     }
 
     /**
@@ -87,7 +87,7 @@
      */
     include("header.php");
 ?>
- <button type="button" class="btn btn-info btn-lg" style="display: none;" id="btn-modal" data-toggle="modal" data-target="#myModal"></button>
+<button type="button" class="btn btn-info btn-lg" style="display: none;" id="btn-modal" data-toggle="modal" data-target="#myModal"></button>
 <div class="container" style="margin-top: 1em; margin-bottom: 1em;">
     <form class="needs-validation" novalidate  method='post'>
         <div class="row">
@@ -96,19 +96,24 @@
                     <div class="card-body">
                         <h2 class="card-title">Enter OTP</h2>
                         <div class="form-group">
+                            
                             <input type="hidden" name="temp" value=<?php echo $count;?> >
-                            <label for="email" class="col-form-label">Please enter the OTP. Contact <?php echo $volName.'( <a href="tel:'.$volPhn.'">'. $volPhn.'</a> )'; ?>  you selected. Make the payment to the volunteer, then he/she may provide you otp.</label>
-                            <input type="number" pattern=".{6}" class="form-control" id="otp"  name="otp" required>
+
+                            <label for="email" class="col-form-label">
+                            Please enter the OTP. Contact <?php echo $volName.'( <a href="tel:'.$volPhn.'">'. $volPhn.'</a> )'; ?>  you selected. Make the payment to the volunteer, then he/she may provide you otp.</label>
+
+                            <input type="number" pattern="[0-9].{7,8}" class="form-control" id="otp"  name="otp" required>
                             <div class="invalid-feedback">
                                 Please provide a valid OTP
                             </div>
                         <div>
-                        <?php echo $msg;?>
+                            <?php echo $msg;?>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        </div>
         <div style="margin-top: 1em;">
             <button type="Submit" class="btn btn-primary btn-lg btn-block" id="reg" >Register</button>
         </div>
@@ -121,5 +126,3 @@
     */
 	include("footer.php"); 
 ?> 		
-<script src="assets/js/reg.js"></script>
-<script src="assets/js/validate.js"></script>

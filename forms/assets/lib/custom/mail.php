@@ -90,9 +90,8 @@
             ";
             try{
                 $mail = mailOBj();
-                $mail->setFrom('no-reply@ieeeditu.org', 'IEEE Student Branch DIT University');
+                $mail->setFrom('test@ieeeditu.org.in', 'IEEE Student Branch DIT University');
                 $mail->addReplyTo('ieee.student.dit@gmail.com', 'Information');
-                $mail->addBCC('kotnala.himanshu99@gmail.com'); 
                 $mail->addAddress($email);  
                 $mail->isHTML(true);                                  // Set email format to HTML
                 $mail->Subject = NAME." Payment OTP "."Odr Id:".$id;
@@ -131,12 +130,10 @@
                 );
             }
         }
-
         if(strlen((string)$rows[0]['txn'])==1)
             $paid = "Offline to ".getVolName($conn,$rows[0]['txn']);
         else
             $paid = "Online via Instamojo";
-
 
         $message = file_get_contents('assets/conn/mailTemplate1.html'); 
         $message = str_replace('%name%', $rows[0]['fname']." ".$rows[0]['lname'], $message); 
@@ -151,9 +148,9 @@
         $message = str_replace('%date%', date("M,d,Y H:i:s"), $message);
         try{
             $mail = mailOBj();
-            $mail->setFrom('no-reply@ieeeditu.org', 'IEEE Student Branch DIT University');
-            $mail->addReplyTo('ieee.student.dit@gmail.com', 'Information');
             //  $mail->addBCC('ieee.student.dit@gmail.com'); 
+            $mail->setFrom(MAIL_USERNAME, 'IEEE Student Branch DIT University');
+            $mail->addReplyTo(EMAIL, 'Information');
             $mail->addAddress($rows[0]['email']);  
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = NAME." Registration Confirmation";
