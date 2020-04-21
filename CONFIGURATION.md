@@ -24,5 +24,7 @@ The project only require changes in configuration file to be deployed.
     * Define a relative path wrt to index.php
     * Deines DB's table name in which registration data get stored
     * Define data related to Event
+* Volunteer
+    * Developer need to add volunteer details in database to allow offline payment
 ### Note
-A developer can deploy multiple forms by making mutliple copy of [form-template](/forms/form-template) folder and changing [Event Details](forms/form-template/assets/common_config.php) file.
+A developer can deploy multiple forms by making copies of [form-template](/forms/form-template) folder and changing [Event Details](forms/form-template/assets/common_config.php) file.
