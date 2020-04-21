@@ -41,7 +41,7 @@ A step by step series of examples that tell you how to get a development env run
 
 Step 1: Clone the repo. Visit [GitHub Guides](https://help.github.com/articles/cloning-a-repository/) to know how to clone the repository
 
-Step 2: Move the `forms` folder to htdocs/www/public_html folder of your Server 
+Step 2: Move the `forms` folder to `htdocs` or `www` or `public_html` folder of your Server 
 
 Step 3: Use the db.sql file to create a tables in MySQL server. (Azuming you have all ready create Database)
 
