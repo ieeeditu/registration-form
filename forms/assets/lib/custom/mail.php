@@ -136,6 +136,8 @@
             $paid = "Online via Instamojo";
 
         $message = file_get_contents('assets/conn/mailTemplate1.html'); 
+        $message = str_replace('%domain_name%', DOMAIN_NAME, $message); 
+        $message = str_replace('%common_assets%', COMMON_ASSETS, $message); 
         $message = str_replace('%name%', $rows[0]['fname']." ".$rows[0]['lname'], $message); 
         $message = str_replace('%event%', NAME, $message); 
         $message = str_replace('%college%', $rows[0]['college'], $message); 
